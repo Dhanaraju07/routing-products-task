@@ -1,0 +1,33 @@
+<div
+  *ngIf="isLoading"
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  "
+>
+  <h1>Loading...</h1>
+</div>
+<div class="container-fluid" id="product-detail">
+  <div class="row">
+    <div class="col-md-6" style="padding-top: 40px">
+      <img [src]="product.images?.[0]" alt="product.title" />
+    </div>
+    <div class="col-md-6 pt-5">
+      <h1>{{ product.title }}</h1>
+
+      <h3>${{ product.price }}.00</h3>
+      <h6>{{ product.description }}</h6>
+
+      <button
+        (click)="goPrevious()"
+        style="margin-right: 12px"
+        class="btn btn-warning"
+      >
+        Previous
+      </button>
+      <button (click)="goNext()" class="btn btn-primary">Next</button>
+    </div>
+  </div>
+</div>
